@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h2>杨岳伟</h2>
+        <div class="container">
+            <!-- 顶部全局组件 -->
+            <HospitalTop />
+        </div>
     </div>
 </template>
 
@@ -8,6 +11,6 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
