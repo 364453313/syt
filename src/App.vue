@@ -3,8 +3,10 @@
             <!-- 顶部全局组件 -->
             <HospitalTop />
             <div class="content">
-                hahahhahah
+                <!-- 动态路由 -->
+                <router-view></router-view>
             </div>
+            <!-- 底部全局组件 -->
             <HospitalBottom />
         </div>
 </template>
