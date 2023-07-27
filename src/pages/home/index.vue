@@ -1,16 +1,15 @@
 <template>
     <div>
         <!-- 首页轮播图结构 -->
-        <el-carousel height="150px">
-            <el-carousel-item v-for="item in 4" :key="item">
-                <h3 class="small justify-center" text="2xl">{{ item }}</h3>
-            </el-carousel-item>
-        </el-carousel>
+        <Carousel />
+        <!-- 首页搜索表单 -->
+        <Search />
     </div>
 </template>
 
 <script setup lang='ts'>
-
+import Carousel from './carousel/index.vue'
+import Search from './search/index.vue'
 </script>
 
 <style scoped lang="scss"></style>
