@@ -13,6 +13,8 @@ import ElementPlus from 'element-plus'
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
+import 'element-plus/dist/index.css'
+
 const app = createApp(App)
 app.component('HospitalTop', HospitalTop)
 app.component('HospitalBottom', HospitalBottom)

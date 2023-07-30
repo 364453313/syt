@@ -20,7 +20,6 @@
 <style scoped lang="scss">
 .top {
     position: fixed;
-    z-index: 9999;
     width: 100%;
     height: 70px;
     background-color: #eee;
