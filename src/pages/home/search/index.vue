@@ -18,7 +18,7 @@ import { Search } from '@element-plus/icons-vue'
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 20px 0;
 
     :deep(.el-input__wrapper){
         width: 600px;

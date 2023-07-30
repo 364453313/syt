@@ -23,6 +23,7 @@
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
     .content {
         width: 1200px;
@@ -31,7 +32,7 @@
         justify-content: space-between;
         align-items: center;
         font-size: 14px;
-        color: #888;
+        color: #7f7f7f;
 
         .right {
             span {

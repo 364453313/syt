@@ -22,12 +22,14 @@
 <style scoped lang="scss">
 .level{
     color: #7f7f7f;
+    margin-bottom: 20px;
     h1{
         font-weight: 900;
         margin: 10px 0;
     }
     .content{
         display: flex;
+        margin-top: 20px;
         .left{
             margin-right: 10px;
         }

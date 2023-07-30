@@ -23,7 +23,7 @@
 <style scoped lang="scss">
 .region {
     color: #7f7f7f;
-    margin-top: 10px;
+    margin-bottom: 20px;
 
     .content {
         display: flex;
@@ -36,19 +36,21 @@
         ul {
             display: flex;
             flex-wrap: wrap;
+
             li {
                 margin-right: 10px;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+
                 &.active {
                     color: #55a6fe;
                 }
             }
-            li:hover{
+
+            li:hover {
                 cursor: pointer;
                 color: #55a6fe;
             }
 
         }
     }
-}
-</style>
+}</style>
