@@ -24,6 +24,7 @@
     height: 70px;
     background-color: #eee;
     display: flex;
+    z-index: calc(var(--el-index-normal) + 2);
     justify-content: center;
 
     .content {
