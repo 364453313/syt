@@ -4,44 +4,65 @@
         <div class="content">
             <div class="left">等级：</div>
             <ul class="hospital">
-                <li class="active">全部</li>
-                <li>三级甲等</li>
-                <li>三级乙等</li>
-                <li>二级甲等</li>
-                <li>二级乙等</li>
-                <li>一级</li>
+                <li :class="{ active: activeFlag == '' }" @click="changLevel('')">全部</li>
+                <li v-for="level in levelArr" :class="{ active: activeFlag == level.value }" :key="level.value"
+                    @click="changeLevel(level.value)">{{ level.name }}</li>
             </ul>
         </div>
     </div>
 </template>
-
 <script setup lang='ts'>
-
+import { reqHospitalLevelAndRegion } from "@/api/home"
+import { onMounted, ref } from 'vue'
+import type { HospitalLevelAndRegionResponseData, HospitalLevelAndRegionArr } from '@/api/home/type'
+// 定义数据存储医院等级的数据
+let levelArr = ref<HospitalLevelAndRegionArr>([])
+let activeFlag = ref<string>('')
+onMounted(() => {
+    getLevel()
+})
+const getLevel = async () => {
+    let result: HospitalLevelAndRegionResponseData = await reqHospitalLevelAndRegion('HosType')
+    // 存储医院等级的数据
+    if (result.code === 200) {
+        levelArr.value = result.data
+    }
+}
+const changeLevel = (level: string) => {
+    activeFlag.value = level
+}
 </script>
 
 <style scoped lang="scss">
-.level{
+.level {
     color: #7f7f7f;
     margin-bottom: 20px;
-    h1{
+
+    h1 {
         font-weight: 900;
         margin: 10px 0;
     }
-    .content{
+
+    .content {
         display: flex;
         margin-top: 20px;
-        .left{
+
+        .left {
             margin-right: 10px;
         }
-        .hospital{
+
+        .hospital {
             display: flex;
-            li{
+
+            li {
                 margin-right: 10px;
-                &.active{
+
+                &.active {
                     color: #55a6fe;
                 }
             }
-            li:hover{
+
+            li:hover {
                 color: #55a6fe;
                 cursor: pointer;
             }

@@ -33,13 +33,14 @@ import Search from './search/index.vue'
 import Level from './level/index.vue'
 import Region from './region/index.vue'
 import Card from './card/index.vue'
+import type { Content, HospitalResponseData } from '@/api/home/type'
 
 // 默认页码
 let pageNo = ref<number>(1)
 // 一页展示几条数据
 let pageSize = ref<number>(10)
-let hasHospitalArr = ref([])
-let total = ref(0)
+let hasHospitalArr = ref<Content>([])
+let total = ref<number>(0)
 // 组件挂在完毕发一次请求
 onMounted(() => {
     reqHospitalInfo()
@@ -47,7 +48,7 @@ onMounted(() => {
 
 // 封装请求
 const reqHospitalInfo = async () => {
-    let result: any = await reqHospital(pageNo.value, pageSize.value)
+    let result: HospitalResponseData = await reqHospital(pageNo.value, pageSize.value)
     if (result.code === 200) {
         hasHospitalArr.value = result.data.content
         total.value = result.data.totalElements
